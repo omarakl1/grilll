@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap');
+:root {
+  --primary: #ff511c;
+  --primary-hover: #e04416;
+  --secondary: #000000;
+  --bg: #fcf8f3;
+  --card: #ffffff;
+  --muted: #666;
+  --nav-h: 80px;
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --container: 1400px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body,#root{height:100%;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:#1a1a1a;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{line-height:1.05;margin:0}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px;box-sizing:border-box}
+.hero-section > div{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-section, .hero-section{display:block}
+.signature-row{display:flex;gap:30px;flex-wrap:wrap;justify-content:center}
+.food-card{width:260px}
+.nav-toggle{display:none;font-size:20px}
+.nav-links{display:flex;gap:28px;align-items:center}
+
+@media (max-width: 1024px){
+  :root{--container:980px}
+  .hero-section > div{grid-template-columns:1fr;gap:40px}
+  .signature-row{gap:20px}
+  .food-card{width:320px}
+}
+
+@media (max-width: 900px) {
+  :root { --nav-h: 64px; }
+  nav{height:var(--nav-h)!important}
+  nav>div{padding:0 12px!important}
+  .nav-toggle{display:inline-block!important}
+  .nav-links{display:none!important}
+  .nav-links.open{display:flex!important;flex-direction:row;position:fixed;bottom:0;left:0;right:0;top:auto;background:#000;padding:10px 8px;justify-content:space-around;gap:12px;z-index:1200;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}
+  .nav-links.open li{list-style:none;margin:0;padding:0}
+  .nav-links.open button{color:#fff!important;border-bottom-color:transparent!important;background:none!important;padding:10px 14px;border-radius:10px;font-weight:600}
+  .hero-section > div{grid-template-columns:1fr!important}
+  .hero-section img{max-width:420px!important;margin:0 auto!important}
+  .about-section{display:block!important}
+  .about-section img{width:100%!important;height:auto!important;margin-bottom:18px!important}
+  .signature-row{flex-direction:column;align-items:center;padding:0 12px!important}
+  .food-card{width:100%!important;max-width:520px!important}
+  .food-card img{width:100%!important;height:auto!important}
+  .services-grid{grid-template-columns:1fr!important}
+  .gallery-page div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  .footer-grid{grid-template-columns:1fr!important;gap:20px!important;padding:24px 12px!important}
+  .booking-section{margin:24px 12px!important;padding:32px 16px!important;border-radius:16px!important}
+  .booking-section input{width:100%!important}
+  .booking-float-btn{right:12px!important;bottom:12px!important}
+}
+
+body.mobile-menu-open{padding-bottom:96px!important}
+body.mobile-menu-open .booking-float-btn{bottom:calc(96px + 12px)!important}
+
+@media (max-width:480px){
+  :root{--nav-h:56px}
+  h2{font-size:1.6rem!important}
+  .food-card{max-width:420px!important}
+}
+
+/* Additional responsive refinements for tablet and mobile */
+@media (max-width: 768px) {
+  .container{padding:0 14px}
+  nav>div{padding:0 10px}
+  .nav-links{gap:12px}
+  .nav-auth{gap:8px}
+  .hero-section{padding:28px 0}
+  .hero-section > div{gap:28px}
+  .hero-section h2{font-size:2.4rem;line-height:1.08}
+  .hero-section p{font-size:0.98rem}
+  .hero-section img{max-width:360px}
+  .signature-row{gap:12px}
+  .booking-section{padding:28px}
+  .booking-float-btn{right:16px;bottom:16px}
+}
+
+@media (max-width: 420px) {
+  .container{padding:0 12px}
+  nav>div{padding:0 8px}
+  .nav-brand{font-size:1.05rem}
+  .nav-links.open{padding:8px 6px}
+  .hero-section{padding:18px 0}
+  .hero-section h2{font-size:1.5rem}
+  .hero-section p{font-size:0.95rem}
+  .hero-section img{max-width:260px}
+  .food-card{width:100%}
+  .signature-row{flex-direction:column;gap:10px}
+  .footer-grid{padding:18px 10px}
+}
